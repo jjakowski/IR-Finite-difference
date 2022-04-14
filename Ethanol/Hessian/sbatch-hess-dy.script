@@ -1,0 +1,52 @@
+#!/bin/bash   
+#SBATCH --job-name="FE-dy"
+#SBATCH --output="J-1.%j.%N.out"  
+#SBATCH --partition=compute 
+###SBATCH --partition=gpu
+###SBATCH --partition=gpu-shared
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+####SBATCH --gres=gpu:4
+#SBATCH -t 48:00:00
+
+#Uncomment for detailed output
+#export ACC_NOTIFY=1
+
+#Run the job
+
+#------------
+#export  LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:~/Development/Magma/magma-1.6.2/install/lib
+#module load cuda
+#export  OMP_NUM_THREADS=24
+
+nthreads=24 
+
+ulimit -a
+ulimit  -c unlimited
+ulimit  -s unlimited
+#ulimit  -m unlimited
+
+
+module load qchem 
+module load octave 
+
+
+#file=p3ht-opt-only-1chain
+#file=p3ht-opt-only-4chains
+#hess-dx.inp  hess+dx.inp  hess-dy.inp  hess+dy.inp  hess-dz.inp  hess+dz.inp
+
+#file=hess-dx
+#file=hess+dx
+file=hess-dy
+#file=hess+dy
+#file=hess-dz
+#file=hess+dz
+
+
+   qchem -save  -nt 24  ${file}.inp   ${file}.out   ${file}-save 
+#  qchem -nt 96 ${file}.inp   ${file}.out
+#  qchem -nt 96 p3ht-opt-1chain.inp  p3ht-opt-1chain.out 
+#  qchem -nt 24 p3ht-freq.in   p3ht-freq.out 
+#  qchem -nt 24 p3ht-pcbm.in   p3ht-pcbm.out 
+#  sh        ./do-extract      p3ht-pcbm.out 
+#  octave    ./octave.inp   >     octave.out

@@ -1,0 +1,10 @@
+$comment0
+   frequencey  test  : finite difference
+$end
+
+$comment
+ water test 
+$end
+
+$molecule
+0 1

@@ -1,0 +1,20 @@
+
+
+# 1-chain: 39, 64
+# 4 chains:  45,70, 145, 170
+#
+ cd 1/hess+dx-save 
+#for iq0  in 1 2 3 4 5 6 7 8 9 10  11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 
+for iq0  in 1 2 3 
+do 
+  
+
+ cd  ../../$iq0/hess+dx-save    ;   ../../QChemRead   <  ../../inp  | tail -n 1 >  DIPOLE
+ cd  ../../$iq0/hess-dx-save    ;   ../../QChemRead   <  ../../inp  | tail -n 1 >  DIPOLE
+ cd  ../../$iq0/hess+dy-save    ;   ../../QChemRead   <  ../../inp  | tail -n 1 >  DIPOLE
+ cd  ../../$iq0/hess-dy-save    ;   ../../QChemRead   <  ../../inp  | tail -n 1 >  DIPOLE
+ cd  ../../$iq0/hess+dz-save    ;   ../../QChemRead   <  ../../inp  | tail -n 1 >  DIPOLE
+ cd  ../../$iq0/hess-dz-save    ;   ../../QChemRead   <  ../../inp  | tail -n 1 >  DIPOLE
+
+
+done

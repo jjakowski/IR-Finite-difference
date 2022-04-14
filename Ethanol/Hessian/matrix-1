@@ -1,0 +1,43 @@
+$end
+
+$rem
+ !MEM_total    120000
+ !MEM_static    1000
+ METHOD HF
+  basis 3-21G
+ ! METHOD       B3LYP       
+ !  METHOD       LRC-wPBEh    
+ ! METHOD       CAM-B3LYP  
+ !  BASIS        6-31G*
+
+ !-- turn on dispersion term
+ !  DFT_D           EMPIRICAL_GRIMME3
+
+ !----- dual basis set
+ !  BASIS         6-31++G(d,p)
+ ! BASIS2        6-31G*
+ ! DUAL_BASIS_ENERGY   true
+
+ !  SCF_FINAL_PRINT 3 
+ !-------  turn of   off symmetry and standard orientation 
+   SYM_IGNORE            true      
+
+ !----- forces
+     JOBTYPE force
+
+ !----- Hessian:
+ !  JOBTYPE    freq
+ !  VIBMAN_PRINT   4
+
+ !---- optimization  part:
+ ! JOBTYPE               opt
+ ! GEOM_OPT_MAX_CYCLES   200 
+ ! GEOM_OPT_PRINT         6
+ ! GEOM_OPT_COORDS       1          ! Optimize in Cartesian coordinates.
+ ! GEOM_OPT_TOL_GRADIENT 8          ! default=6
+
+ !--- solvation:
+ !  SOLVENT_METHOD  PCM
+$end
+
+

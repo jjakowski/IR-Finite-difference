@@ -1,0 +1,62 @@
+$comment0
+   frequencey  test  : finite difference
+$end
+
+$comment
+ water test 
+$end
+
+$molecule
+0 1
+         H         2.0860597933   -0.4101771922    0.0231826563 
+         C         1.2206834945    0.2408521884   -0.0197908571 
+         H         1.2825919916    0.9416617289    0.8070783552 
+         C        -0.0744655709   -0.5731552400    0.0533205014 
+      O      -1.2396983232       0.2639573475      -0.1057619312 
+         H        -0.1171147291   -1.1297611914    0.9840547059 
+         H        -1.2891909910    0.9052784983    0.6156345154 
+         H        -0.1187518678   -1.2785461385   -0.7617631973 
+         H         1.2458357338    0.8010795274   -0.9457421996 
+$end
+
+$rem
+ !MEM_total    120000
+ !MEM_static    1000
+ METHOD HF
+  basis 3-21G
+ ! METHOD       B3LYP       
+ !  METHOD       LRC-wPBEh    
+ ! METHOD       CAM-B3LYP  
+ !  BASIS        6-31G*
+
+ !-- turn on dispersion term
+ !  DFT_D           EMPIRICAL_GRIMME3
+
+ !----- dual basis set
+ !  BASIS         6-31++G(d,p)
+ ! BASIS2        6-31G*
+ ! DUAL_BASIS_ENERGY   true
+
+ !  SCF_FINAL_PRINT 3 
+ !-------  turn of   off symmetry and standard orientation 
+   SYM_IGNORE            true      
+
+ !----- forces
+     JOBTYPE force
+
+ !----- Hessian:
+ !  JOBTYPE    freq
+ !  VIBMAN_PRINT   4
+
+ !---- optimization  part:
+ ! JOBTYPE               opt
+ ! GEOM_OPT_MAX_CYCLES   200 
+ ! GEOM_OPT_PRINT         6
+ ! GEOM_OPT_COORDS       1          ! Optimize in Cartesian coordinates.
+ ! GEOM_OPT_TOL_GRADIENT 8          ! default=6
+
+ !--- solvation:
+ !  SOLVENT_METHOD  PCM
+$end
+
+

@@ -1,0 +1,51 @@
+
+
+# 1-chain: 39, 64
+# 4 chains:  45,70, 145, 170
+#
+# echo " HESSIAN: "
+ 
+for iq0  in 1 2 3   #  4 5 6 7 8 9 10  11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 
+do 
+for iq1  in 1 2 3   # 4 5 6 7 8 9 10  11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 
+do
+ echo  Q =  $iq0    $iq1 
+ xm=` tail -n +4  $iq0/hess+dx-save/GRAD | head -n $iq1 |tail -n 1 `
+ xp=` tail -n +4  $iq0/hess-dx-save/GRAD | head -n $iq1 |tail -n 1 `
+ ym=` tail -n +4  $iq0/hess+dy-save/GRAD | head -n $iq1 |tail -n 1 `
+ yp=` tail -n +4  $iq0/hess-dy-save/GRAD | head -n $iq1 |tail -n 1 `
+ zm=` tail -n +4  $iq0/hess+dz-save/GRAD | head -n $iq1 |tail -n 1 `
+ zp=` tail -n +4  $iq0/hess-dz-save/GRAD | head -n $iq1 |tail -n 1 `
+
+
+ echo  $xp  $xm  |awk '{bohr2A=0.529177249;dr=2.e-4;sc=bohr2A/dr;  printf("  %18.10e %18.10e %18.10e \n",($4-$1)*sc,($5-$2)*sc,($6-$3)*sc)}'     
+ echo  $yp  $ym  |awk '{bohr2A=0.529177249;dr=2.e-4;sc=bohr2A/dr;  printf("  %18.10e %18.10e %18.10e \n",($4-$1)*sc,($5-$2)*sc,($6-$3)*sc)}'     
+ echo  $zp  $zm  |awk '{bohr2A=0.529177249;dr=2.e-4;sc=bohr2A/dr;  printf("  %18.10e %18.10e %18.10e \n",($4-$1)*sc,($5-$2)*sc,($6-$3)*sc)}'     
+
+
+
+done
+done
+
+
+
+#---- NOW dipoles
+echo   "DIPOLE DERIVATIVE"
+for iq0  in 1 2 3   # 4 5 6 7 8 9 10  11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 
+do
+ echo  Q =  $iq0    
+ xm=` tail -n 1  $iq0/hess+dx-save/DIPOLE  `
+ xp=` tail -n 1  $iq0/hess-dx-save/DIPOLE  `
+ ym=` tail -n 1  $iq0/hess+dy-save/DIPOLE  `
+ yp=` tail -n 1  $iq0/hess-dy-save/DIPOLE  `
+ zm=` tail -n 1  $iq0/hess+dz-save/DIPOLE  `
+ zp=` tail -n 1  $iq0/hess-dz-save/DIPOLE  `
+
+
+ echo  $xp  $xm  |awk '{bohr2A=0.529177249;dr=2.e-4;sc=bohr2A/dr;  printf("  %18.10e %18.10e %18.10e \n",($4-$1)*sc,($5-$2)*sc,($6-$3)*sc)}'     
+ echo  $yp  $ym  |awk '{bohr2A=0.529177249;dr=2.e-4;sc=bohr2A/dr;  printf("  %18.10e %18.10e %18.10e \n",($4-$1)*sc,($5-$2)*sc,($6-$3)*sc)}'     
+ echo  $zp  $zm  |awk '{bohr2A=0.529177249;dr=2.e-4;sc=bohr2A/dr;  printf("  %18.10e %18.10e %18.10e \n",($4-$1)*sc,($5-$2)*sc,($6-$3)*sc)}'     
+
+
+
+done

@@ -1,0 +1,66 @@
+
+#
+
+
+
+
+
+#sed -n "/Optimized structure in the  initial   frame/,/end/p"   $file  | egrep -vi  "ptimized|end"  > matrix-xyz
+#sed -n "/Optimized quantum  H/,/end/p"                          $file  | egrep -vi  "ptimized|end"  > matrix-Qxyz
+
+#for iQ  in 17 18  20 21  23 24  26 27  29 30 
+#for iQ  in 1 2 3 4 5 6 7 8 9 10  11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 
+for  iQ in 1 2 3
+do
+   # cat matrix-Qxyz  |  sed   -v id=$Q  "/Q-atom no:      39/, awk  '
+   #  awk  
+   #  xpdx  = x+dx
+  #xpdx=`cat matrix-Qxyz   |  sed    -n "/ Q-atom no:      $iQ/,+12p" | grep x+dr  |  awk '{x=$3;y=$4;z=$5;printf(" %s ", x)}` 
+  #xmdx=`cat matrix-Qxyz   |  sed    -n "/ Q-atom no:      $iQ/,+12p" | grep x-dr  |  awk '{x=$3;y=$4;z=$5;printf(" %s ", x)}` 
+  
+
+  dx=1.e-3 
+  dy=1.e-3 
+  dz=1.e-3 
+
+  
+
+  mkdir  $iQ
+   
+  fileout=$iQ/hess+dx.inp
+  cat    matrix-0                                                                                                                                                           >  $fileout 
+  cat matrix-xyz | awk -v dx=$dx -v dy=$dy -v dz=$dz -v iq=$iQ '{if (NR!=iq) printf(" %s \n", $0); if (NR==iq) printf(" %6s %18.10f %18.10f %18.10f \n", $1,$2+dx,$3,$4)}'  >> $fileout 
+  cat    matrix-1                                                                                                                                                           >> $fileout 
+
+  fileout=$iQ/hess-dx.inp
+  cat    matrix-0                                                                                                                                                           >  $fileout 
+  cat matrix-xyz |awk -v dx=$dx -v dy=$dy -v dz=$dz -v iq=$iQ  '{if (NR!=iq) printf(" %s \n", $0); if (NR==iq) printf(" %6s %18.10f %18.10f %18.10f \n", $1,$2-dx,$3,$4)}'  >> $fileout 
+  cat    matrix-1                                                                                                                                                           >> $fileout 
+
+  fileout=$iQ/hess+dy.inp
+  cat    matrix-0                                                                                                                                                           >  $fileout 
+  cat matrix-xyz |awk -v dx=$dx -v dy=$dy -v dz=$dz -v iq=$iQ  '{if (NR!=iq) printf(" %s \n", $0); if (NR==iq) printf(" %6s %18.10f %18.10f %18.10f \n", $1,$2,$3+dy,$4)}'  >> $fileout 
+  cat    matrix-1                                                                                                                                                           >> $fileout 
+
+  fileout=$iQ/hess-dy.inp
+  cat    matrix-0                                                                                                                                                           >  $fileout 
+  cat matrix-xyz |awk -v dx=$dx -v dy=$dy -v dz=$dz -v iq=$iQ  '{if (NR!=iq) printf(" %s \n", $0); if (NR==iq) printf(" %6s %18.10f %18.10f %18.10f \n", $1,$2,$3-dy,$4)}'  >> $fileout 
+  cat    matrix-1                                                                                                                                                           >> $fileout 
+   
+  fileout=$iQ/hess+dz.inp
+  cat    matrix-0                                                                                                                                                           >  $fileout 
+  cat matrix-xyz |awk -v dx=$dx -v dy=$dy -v dz=$dz -v iq=$iQ  '{if (NR!=iq) printf(" %s \n", $0); if (NR==iq) printf(" %6s %18.10f %18.10f %18.10f \n", $1,$2,$3,$4+dz)}'  >> $fileout 
+  cat    matrix-1                                                                                                                                                           >> $fileout 
+
+  fileout=$iQ/hess-dz.inp
+  cat    matrix-0                                                                                                                                                           >  $fileout 
+  cat matrix-xyz |awk -v dx=$dx -v dy=$dy -v dz=$dz -v iq=$iQ  '{if (NR!=iq) printf(" %s \n", $0); if (NR==iq) printf(" %6s %18.10f %18.10f %18.10f \n", $1,$2,$3,$4-dz)}'  >> $fileout 
+  cat    matrix-1                                                                                                                                                           >> $fileout 
+
+
+done
+
+
+
+
+

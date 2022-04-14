@@ -1,0 +1,37 @@
+
+
+#   tail ./$mydir/h*out   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  | grep -v  Thank 
+
+for (( c=1; c<=38 ; c++ ))
+
+#for c in 1
+do 
+  mydir=$c
+ #myfile=$mydir/hess-dx.out  ;  tmp=$(tail  ./$mydir/h*out   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  )   ;     echo  $myfile "  "  $tmp 
+ #myfile=$mydir/hess+dx.out  ;  tmp=$(tail  ./$mydir/h*out   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  )   ;     echo  $myfile "  "  $tmp 
+ #myfile=$mydir/hess-dy.out  ;  tmp=$(tail  ./$mydir/h*out   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  )   ;     echo  $myfile "  "  $tmp 
+ #myfile=$mydir/hess+dy.out  ;  tmp=$(tail  ./$mydir/h*out   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  )   ;     echo  $myfile "  "  $tmp 
+ #myfile=$mydir/hess-dz.out  ;  tmp=$(tail  ./$mydir/h*out   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  )   ;     echo  $myfile "  "  $tmp 
+ #myfile=$mydir/hess+dx.out  ;  tmp=$(tail  ./$mydir/h*out   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  )   ;     echo  $myfile "  "  $tmp 
+
+ #myfile=$mydir/hess-dx.out  ;  tmp=$(tail   $myfile   | egrep "hess|Thank"   | awk '{if ($1 == "==>") printf("\n"); printf("%s",$0)}'  )   ;     echo  $myfile "  "  $tmp 
+  myfile=$mydir/hess-dx.out  ;  tmp=$( tail  ${myfile}  | grep "Thank" |awk '{  printf(" %s  \n", $2)}'     );   echo  $myfile "  "  $tmp  |  grep -v  Thank 
+  myfile=$mydir/hess+dx.out  ;  tmp=$( tail  ${myfile}  | grep "Thank" |awk '{  printf(" %s  \n", $2)}'     );   echo  $myfile "  "  $tmp  |  grep -v  Thank 
+  myfile=$mydir/hess-dy.out  ;  tmp=$( tail  ${myfile}  | grep "Thank" |awk '{  printf(" %s  \n", $2)}'     );   echo  $myfile "  "  $tmp  |  grep -v  Thank 
+  myfile=$mydir/hess+dy.out  ;  tmp=$( tail  ${myfile}  | grep "Thank" |awk '{  printf(" %s  \n", $2)}'     );   echo  $myfile "  "  $tmp  |  grep -v  Thank 
+  myfile=$mydir/hess-dz.out  ;  tmp=$( tail  ${myfile}  | grep "Thank" |awk '{  printf(" %s  \n", $2)}'     );   echo  $myfile "  "  $tmp  |  grep -v  Thank 
+  myfile=$mydir/hess+dz.out  ;  tmp=$( tail  ${myfile}  | grep "Thank" |awk '{  printf(" %s  \n", $2)}'     );   echo  $myfile "  "  $tmp  |  grep -v  Thank 
+
+
+  # #  | awk '{if ($1 == "==>") printf("\n"); printf("%s \n",$0)}'  )   ; 
+  # echo  $tmp
+  # tmp=$(tail 1/hess-dx.out )
+  #   echo  $myfile "  "  $tmp 
+  # echo   $myfile  ":::::" $tmp
+  #aa=" tail   1/hess-dx.out | grep Thank "
+  #aa=$( tail   1/hess-dx.out | grep now) 
+  #aa=$( tail   1/hess-dx.out | grep Thank   |   awk '{if ($1 == "Thank")  printf(" OK \n")}' )
+ # aa=$( tail   1/hess-dx.out | grep Thank   |   awk '{  printf(" %s  \n", $2)}' )
+  #echo  $aa
+  #$aa
+done
