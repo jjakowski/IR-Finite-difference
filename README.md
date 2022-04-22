@@ -4,7 +4,7 @@ see Peter Atkins, Ronald Friedman, book "*Molecular Quantum Mechanics, Fourth Ed
  
  And here:
  
-chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Book%3A_Quantum_Mechanics__in_Chemistry_(Simons_and_Nichols)/15%3A_Spectroscopy/15.02%3A_Vibration-Rotation_Transitions
+https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Book%3A_Quantum_Mechanics__in_Chemistry_(Simons_and_Nichols)/15%3A_Spectroscopy/15.02%3A_Vibration-Rotation_Transitions
 
 ====
  ## IR intensity: 
