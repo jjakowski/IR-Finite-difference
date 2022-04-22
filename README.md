@@ -63,7 +63,7 @@ ground  and first excited vibrational states are:
 
       |0>   =  [ sqrt(k/pi)]**(1/2)    * exp(-k*0.5*Q^2)        = (k/pi)^(1/4)           * exp(-k*0.5*Q^2)
       |1>   =  [ sqrt(k/pi) / 2]^(1/2) * exp(-k*0.5*Q^2)* (2*Q) =  sqrt(2)* (k/pi)^(1/4) * exp(-k*0.5*Q^2) * Q
-    <1|Q|0> =  < exp(-k*0.5*Q^2) |  Q * |  Q*exp(-k*0.5*Q^2)> * sqrt(2*k/pi)
+    <1|Q|0> =  < Q*exp(-k*0.5*Q^2) |  Q * |  Q*exp(-k*0.5*Q^2)> * sqrt(2*k/pi)
             =    (w*massreduced)^(-1/2)
 
         IR =    (du/dQ)^2 * 1/(w*massreduced)       #  where : 
