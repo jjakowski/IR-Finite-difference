@@ -11,7 +11,7 @@ Mass weighted coordidnates:
 
                                                         q_i = sqrt(m_i) *x_i
 
-Then hessian in "q"  becomes mass weighted hessian:
+Then hessian in "q"  becomes a *mass weighted hessian*:
 
                             H_kj = d2 V/ dq_k*dq_j  =   d2 V/dx_k*dx_j  *(m_k*mj)^(-1/2) 
                             EKin = sum_k ( 1/2* m_k* dx_k/dt)   =    1/2*sum_k [ dq_k/dt  ]
