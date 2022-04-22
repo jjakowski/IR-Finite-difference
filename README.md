@@ -1,7 +1,10 @@
 # IR-finite-difference
 see Peter Atkins, Ronald Friedman, book "*Molecular Quantum Mechanics, Fourth Edition*", Oxford University Press, New York, 2005,  
  page 368 and Example 10.3 on page 361, chapter 10, "*Molecular rotations and vibrations*"
-
+ 
+ And here:
+ 
+chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Book%3A_Quantum_Mechanics__in_Chemistry_(Simons_and_Nichols)/15%3A_Spectroscopy/15.02%3A_Vibration-Rotation_Transitions
 
 ====
  ## IR intensity: 
