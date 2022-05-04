@@ -24,7 +24,7 @@ Then hessian in "q"  becomes a *mass weighted hessian*:
 Diagonalize  H_kj: 
 
     [cc,ee]  = diag(H_kj)
-  which gives normal mode c in mass weighted   coordinates. We convert it back to cartesian normal mode Q:
+  which gives normal mode c in mass weighted   coordinates. We convert it back to ***cartesian displacement*** along __normal__ mode Q:
   
     Q  = cc ./sqrt(m)         
 
@@ -73,3 +73,7 @@ ground  and first excited vibrational states are:
          w = sqrt(k/massereduced)
 
 
+**\Delta**
+
+
+m(**R_0**)
