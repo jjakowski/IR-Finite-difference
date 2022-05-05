@@ -76,7 +76,7 @@ Then
        cc2       =  cc ./sqrt(m)
         
         
-we getting          
+Thus  transition          
          
 
 Now the   harmonic oscillator wavefunction as a function of Q and force constant "k": 
@@ -99,6 +99,10 @@ ground  and first excited vibrational states are:
 
 
 **\Delta**
-
+ Transition dipole moment for k-th mode given by Q:
+ 
+    <0| u |1> =  <0 | u0 +  Sum_i^{3N} (du/dR_i)* (dR_i/dQ) * Q |1 > 
+              =    Sum_i^{3N}   (du/dR_i) *  (dR_i/dQ)  *  <0|Q|1> 
+              =    Sum_i^{3N}   (du/dR_i  *  cc2(1:3,:) * (mass_reduced)
 
 m(**R_0**)
