@@ -26,16 +26,16 @@ Diagonalize  H_kj:
     [cc,ee]  = diag(H_kj)
   which gives normal mode c in mass weighted   coordinates. We convert it back to ***cartesian displacement*** along __normal__ mode Q:
   
-    Delta R   = cc ./sqrt(m)        
+    Delta R   = cc ./sqrt(m) * Q       
     
 and the vector of cartesian nuclear coordinates:  
 
-     R= [R1, R2, ,,,, R3N ] 
+     R= [R1, R2, ... , R3N ] 
      R_i = R0_i +  dR_i/dQ * Q    
-
   
+where  (dR_i/dQ) is  normal mode vector:
 
-where  
+    dR_i/dQ : =   cc2 =  cc ./sqrt(m)        # from diagonalization 
 
     size(cc,1) = size(m) =  3*Natoms       
 
