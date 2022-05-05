@@ -70,7 +70,7 @@ Then
            =       [ Sum_i^{3N} (du/dR_i) * (dR_i/dQ)  ] *   <1|Q|0> 
            
            
-du/dR_i   = d/dR_i [ux, uy, uz]      ---  derivative of dipole moment componets  over nuclear  displacement  from ab initio  calculations
+     du/dR_i   = d/dR_i [ux, uy, uz]      ---  derivative of dipole moment componets  over nuclear  displacement  from ab initio  calculations
         
         
 we getting          
