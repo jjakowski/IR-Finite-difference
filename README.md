@@ -26,7 +26,11 @@ Diagonalize  H_kj:
     [cc,ee]  = diag(H_kj)
   which gives normal mode c in mass weighted   coordinates. We convert it back to ***cartesian displacement*** along __normal__ mode Q:
   
-    Q  = cc ./sqrt(m)         
+    Delta R   = cc ./sqrt(m)        
+    
+and cartesian nuclear coordinates  R= [R ] R_i = R0_i +  dR_i/dQ * Q    
+
+  
 
 where  
 
@@ -38,11 +42,17 @@ We also get reduced mass for k-th mode  from mass vector as :
 
                        mass_reduced_k  =    <cc(k) | m | cc(k) > =  sum_i [  cc(k,i)**2 * m_i] 
 
-Now we want to getIR intensity from  dipole  exapnsion::
+Now we want to getIR intensity from  dipole  expansion::
 
 dipole moment aas a function of  normal mode coordinate Q (displacement from equilibrium):
 
                        u = u0  + du/dQ * Q  +  1/2* d2u/dQ2 + ....
+                       u = u0  + Sum_i^{3N} (du/dR_i)  * (dR_i/dQ) +  ..... 
+
+where  Q corresponds to a given  normal mode and dipole moment is  u= u(R1(Q), R2(Q), .... ,R3N(Q))
+
+                      u 
+                  
 
 then
 
