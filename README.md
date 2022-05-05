@@ -50,14 +50,15 @@ Now we want to getIR intensity from  dipole  expansion::
 dipole moment aas a function of  normal mode coordinate Q (displacement from equilibrium):
 
                        u = u0  + du/dQ * Q  +  1/2* d2u/dQ2 + ....
-                       u = u0  + Sum_i^{3N} (du/dR_i)  * (dR_i/dQ) +  ..... 
+                       u = u0  + Q * [ Sum_i^{3N} (du/dR_i) * (dR_i/dQ) ] +  ..... 
 
-where  Q corresponds to a given  normal mode and dipole moment is  u= u(R1(Q), R2(Q), .... ,R3N(Q))
+where  dipole moment is  u= u(R1(Q), R2(Q), .... ,R3N(Q)) , so
 
-                      u 
+                       du/dQ = Sum_i^{3N} (du/dR_i) * (dR_i/dQ) 
+
+and Q corresponds to a given k-th normal mode                      
                   
-
-then
+Then
 
         IR =  | <vib_1| u | vib_0>  | ^2   
 
@@ -66,6 +67,14 @@ then
            =  u0*<1|0>  + du/dQ* <1|Q|0> +  ....
            =  u0* 0     + du/dQ* <1|Q|0> 
            =              du/dQ* <1|Q|0> 
+           =       [ Sum_i^{3N} (du/dR_i) * (dR_i/dQ)  ] *   <1|Q|0> 
+           
+           
+du/dR_i   = d/dR_i [ux, uy, uz]      ---  derivative of dipole moment componets  over nuclear  displacement  from ab initio  calculations
+        
+        
+we getting          
+         
 
 Now the   harmonic oscillator wavefunction as a function of Q and force constant "k": 
 
