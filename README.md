@@ -54,7 +54,7 @@ dipole moment aas a function of  normal mode coordinate Q (displacement from equ
 
 where  dipole moment u  and  its derivtive  are:
 
-                       u    =  u(R1(Q), R2(Q), .... ,R3N(Q)) , so
+                       u     =  u(R1(Q), R2(Q), .... ,R3N(Q)) 
                        du/dQ = Sum_i^{3N} (du/dR_i) * (dR_i/dQ) 
 
 and Q corresponds to a given k-th normal mode                      
