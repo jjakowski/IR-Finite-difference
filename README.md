@@ -28,7 +28,10 @@ Diagonalize  H_kj:
   
     Delta R   = cc ./sqrt(m)        
     
-and cartesian nuclear coordinates  R= [R ] R_i = R0_i +  dR_i/dQ * Q    
+and the vector of cartesian nuclear coordinates:  
+
+     R= [R1, R2, ,,,, R3N ] 
+     R_i = R0_i +  dR_i/dQ * Q    
 
   
 
