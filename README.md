@@ -33,7 +33,7 @@ and the vector of cartesian nuclear coordinates:
      R= [R1, R2, ... , R3N ] 
      R_i = R0_i +  dR_i/dQ * Q    
   
-where  (dR_i/dQ) is  normal mode vector:
+where  R0 is  vector of nuclear positions at the minimmum of potential energy  and  (dR_i/dQ) is normal mode vector:
 
     dR_i/dQ : =   cc2 =  cc ./sqrt(m)        # from diagonalization 
 
