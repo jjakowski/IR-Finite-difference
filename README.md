@@ -52,8 +52,9 @@ dipole moment aas a function of  normal mode coordinate Q (displacement from equ
                        u = u0  + du/dQ * Q  +  1/2* d2u/dQ2 + ....
                        u = u0  + Q * [ Sum_i^{3N} (du/dR_i) * (dR_i/dQ) ] +  ..... 
 
-where  dipole moment is  u= u(R1(Q), R2(Q), .... ,R3N(Q)) , so
+where  dipole moment u  and  its derivtive  are:
 
+                       u    =  u(R1(Q), R2(Q), .... ,R3N(Q)) , so
                        du/dQ = Sum_i^{3N} (du/dR_i) * (dR_i/dQ) 
 
 and Q corresponds to a given k-th normal mode                      
