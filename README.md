@@ -103,13 +103,13 @@ ground  and first excited vibrational states are:
  
     <0| u |1> =  <0 | u0 +  Sum_i^{3N} (du/dR_i)* (dR_i/dQ) * Q |1 > 
               =    Sum_i^{3N}   (du/dR_i) *  (dR_i/dQ)   *  <0|Q|1> 
-              =    Sum_i^{3N}   [du/dR_i  *  cc2(i)] ./ sqrt(mass_reduced)
+              =    Sum_i^{3N}   [du/dR_i  *  cc2(i)]     / sqrt(mass_reduced)
               
-And the x,y,z componentns of transition dipole moment for k-th normal mode are given by:
+And the x,y,z componentns of transition dipole moment  (***TransDip***)  for k-th normal mode are given by:
 
-     <0| ux |1>   =  Sum_i^{3N}   [dux/dR_i  *  cc2(i,k)] ./ sqrt(mass_reduced_k)         #check it!!!
-     <0| uy |1>   =  Sum_i^{3N}   [duy/dR_i  *  cc2(i,k)] ./ sqrt(mass_reduced_k)
-     <0| uz |1>   =  Sum_i^{3N}   [duz/dR_i  *  cc2(i,k)] ./ sqrt(mass_reduced_k)
+     <0| ux |1>   =  Sum_i^{3N}   [dux/dR_i  *  cc2(i,k)]  / sqrt(mass_reduced_k)         #check it!!!
+     <0| uy |1>   =  Sum_i^{3N}   [duy/dR_i  *  cc2(i,k)]  / sqrt(mass_reduced_k)
+     <0| uz |1>   =  Sum_i^{3N}   [duz/dR_i  *  cc2(i,k)]  / sqrt(mass_reduced_k)
 
  
 
