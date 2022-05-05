@@ -107,7 +107,7 @@ ground  and first excited vibrational states are:
               
 And the x,y,z componentns of transition dipole moment for k-th normal mode are given by:
 
-     <0| ux |1>   =  Sum_i^{3N}   [dux/dR_i  *  cc2(i,k)] ./ sqrt(mass_reduced_k))
+     <0| ux |1>   =  Sum_i^{3N}   [dux/dR_i  *  cc2(i,k)] ./ sqrt(mass_reduced_k)         #check it!!!
      <0| uy |1>   =  Sum_i^{3N}   [duy/dR_i  *  cc2(i,k)] ./ sqrt(mass_reduced_k)
      <0| uz |1>   =  Sum_i^{3N}   [duz/dR_i  *  cc2(i,k)] ./ sqrt(mass_reduced_k)
 
