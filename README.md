@@ -35,7 +35,7 @@ and the vector of cartesian nuclear coordinates:
   
 where  R0 is  vector of nuclear positions at the minimmum of potential energy  and  (dR_i/dQ) is normal mode vector:
 
-    dR_i/dQ : =   cc2 =  cc ./sqrt(m)        # from diagonalization 
+    dR_i/dQ : =   cc2 =  cc ./sqrt(m)        # *cc* is from diagonalization of mass weighted hessian 
 
     size(cc,1) = size(m) =  3*Natoms       
 
