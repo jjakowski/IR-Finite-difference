@@ -82,15 +82,15 @@ Thus  transition
 Now the   harmonic oscillator wavefunction as a function of Q and force constant "k": 
 
        |n> =   |n(Q) >  =   [ sqrt(k/pi) /(2^n *n!) ]^(1/2)  * exp(-k*0.5*Q**2)      * Hn(sqrt(k)*Q ) 
-                  Normalization:   N_n = [ sqrt(k/pi) /(2^n *n!_) ]^(1/2)    
+                  Normalization:   N_n = [ sqrt(k/pi) /(2^n *n! ) ]^(1/2)    
                   and Hermites:
                       H0(x)  = 1 
-                      H1(x)  = 2 *x     
+                      H1(x)  = 2 *x      =  2*sqrt(k)*Q
 
 ground  and first excited vibrational states are:
 
-      |0>   =  [ sqrt(k/pi)]**(1/2)    * exp(-k*0.5*Q^2)        = (k/pi)^(1/4)           * exp(-k*0.5*Q^2)
-      |1>   =  [ sqrt(k/pi) / 2]^(1/2) * exp(-k*0.5*Q^2)* (2*Q) =  sqrt(2)* (k/pi)^(1/4) * exp(-k*0.5*Q^2) * Q
+      |0>   = [ sqrt(k/pi)]**(1/2)    * exp(-k*0.5*Q^2)                = (k/pi)^(1/4)         * exp(-k*0.5*Q^2)
+      |1>   = [ sqrt(k/pi) / 2]^(1/2) * exp(-k*0.5*Q^2)* (2*sqrt(k)*Q) = sqrt(2)*(k/pi)^(1/4) * exp(-k*0.5*Q^2) * Q* sqrt*k)
     <1|Q|0> =  < Q*exp(-k*0.5*Q^2) |  Q * |  Q*exp(-k*0.5*Q^2)> * sqrt(2*k/pi)
             =    (w*massreduced)^(-1/2)
 
