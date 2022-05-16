@@ -115,5 +115,5 @@ And the x,y,z componentns of transition dipole moment  (***TransDip***)  for k-t
 
 m(**R_0**)
 
-  trans_dip =  du ./sqrt(mass_reduced) ;
-  IR = sum(du .* du) ./ mass_reduced  *amu  *sc   ;
+    trans_dip =  du ./sqrt(mass_reduced) 
+    IR = sum(du .* du) ./ mass_reduced  *amu  *sc   
