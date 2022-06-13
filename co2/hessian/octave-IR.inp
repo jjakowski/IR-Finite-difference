@@ -1,0 +1,46 @@
+
+
+V= load("hessian_vec")  ;
+Natoms =3   ; 
+N= 3*Natoms ;
+Hess =  reshape(V,N,N)  ;
+Hess =0.5*(Hess +Hess') ;
+
+
+#-----------------
+mH= 1.00794 ;  mD =2.014 ;   mO = 15.9994   ; mC =12 ; mN =  14.0067
+mass_co2 (1:3) =   mC ; 
+mass_co2 (4:9) =   mO ; 
+
+mass_benzene = [ mC; mC; mC;
+         mH; mH; mH;
+         mC; mC; mC;
+         mH; mH; mH;
+         mC; mC; mC;
+         mH; mH; mH;
+         mC; mC; mC;
+         mH; mH; mH;
+         mC; mC; mC;
+         mH; mH; mH;
+         mC; mC; mC;
+         mH; mH; mH ];
+
+mass_co2 = [mC; mC; mC; 
+            mO; mO; mO; 
+            mO; mO; mO];
+
+mass =mass_co2 ;
+
+
+mass_sq = mass *mass'  ;   
+mass_sq_size = size(mass_sq)    ;
+mwHess = Hess ./sqrt(mass_sq) /amu ;  
+
+[cc,ee ] = eig(mwHess) ;
+ ee=diag(ee) ;
+ 
+ freqs_cm  = sqrt(abs(ee(1:3*Natoms)))/cm2Eh    ;
+printf(" Vibrational frequencies (all) in cm-1 \n") 
+for i =1: N
+  printf(" %d  :   %12.4f  (cm-1) \n",i, freqs_cm(i));
+endfor 

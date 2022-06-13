@@ -1,0 +1,71 @@
+k_Boltz   = 1.380651e-23   	 (J/K) 
+h_Planck  = 6.626074e-34   	 (J*s) 
+c_light   = 7.251633e-07   	 (cm/aut)    
+R         = 8.314470e+00   	 (J/K*mol) 
+N_avog    = 6.022137e+23   	 (molecules) 
+ 
+Deb2eA    = 2.081943e-01   	 (Debye) => (e*Angstrom) 
+ 
+kJ2kcal =  0.23901
+Eh2kcal =  627.51
+Eh2kJ =  2625.5
+Eh2eV =  27.211
+Eh2MHz =    6.5797e+09
+Eh2kT =  315773
+cm2eV =    1.2398e-04
+cm2Eh =    4.5563e-06
+kT2Eh =    3.1668e-06
+bohr2A =  0.52918
+HMass =  1836.2
+amu =  1822.9
+au2fs =  0.024189
+
+ Convert wavenumbers(cm-1) to  period(fs):    t(fs) = wave2fs/w(cm-1)  
+
+ Convert   energy (eV) to wavelength (nm):    l(nm) = eV2nm/En(eV)  
+
+ interpolation(x,xyp0,xyp1) usage:  
+     x     - any number between x0, and x1 
+     xyp0  = [x0, y0, y'0] 
+     xyp1  = [x1, y1, y'1] 
+ 
+
+ G_conv(x,sigma) returns convolution of input signal with Gaussian (Gx). Usage : 
+         x     - input signal (evenly spaced points)        
+         sigma - half width of gaussian (in term of points) 
+                 when sigma <1  then   G(x)=Dirac_delta(x)  
+
+ G_conv_discrete(x,signal, sigma) : Use Gaussian convolution to calculate Density of States 
+        x      - input vector of Np-points on which we want to generate density of states DOS 
+                 'x' does not need to be spread uniformly . 
+        signal - input signal,  expected: 
+                 1D vector of Ne - points (like M.O energies) or 
+                 2 x 1D  vector of Ne -points ( excitation  energies and intensities)    
+        sigma - width of Gaussian used for convolution  in 'x'-length units 
+
+ gaussian (x,sigma)    returns Gaussian function  on vector 'x'     with width =sigma . Usage : 
+
+ gaussian0(x,x0,sigma) returns Gaussian function  on vector 'x -x0' with width =sigma . Usage : 
+         x     - input vector  of  x-values                 
+         x0    - input scalar  of  with Gaussian center     
+         sigma - half width of gaussian (in term of points) 
+                 when sigma <1  then   G(x)=Dirac_delta(x)  
+
+ lorentzian (x,x0,k0)  returns Lorentzian  function   1/pi *  k0/((x-x0).**2 +k0**2);  on vector 'x'  
+ 
+
+  L_conv(x,k)  returns convolution of input signal with Lorentzian  . Usage :  
+           x     - input signal (evenly spaced points)           
+           k     -  defines width of the Lorentzian  spread      
+ 
+mN =  14.007
+ Vibrational frequencies (all) in cm-1 
+ 1  :         0.0000  (cm-1) 
+ 2  :         0.0000  (cm-1) 
+ 3  :         0.0000  (cm-1) 
+ 4  :         4.2510  (cm-1) 
+ 5  :         4.2511  (cm-1) 
+ 6  :       545.4247  (cm-1) 
+ 7  :       545.4247  (cm-1) 
+ 8  :      1363.0969  (cm-1) 
+ 9  :      2397.1464  (cm-1) 
