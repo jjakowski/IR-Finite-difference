@@ -1,6 +1,6 @@
 
 Here is the the example of IR frequencies  for  CO2 from DFTB+  from Hessian.
-The hessian is caluclated using finite difference  directly in DFTB+  with this   command;
+The hessian is caluclated using finite difference  DFTB3 and 3ob parameters directly in DFTB+  with this   command;
 
 Driver = SecondDerivatives{
         Atoms= {1:-1 }
