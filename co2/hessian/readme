@@ -4,7 +4,7 @@ Steps to calculate vibrational frequencies (and thermochemistry )  with DFTB
   Assuming that the structure is optimized  then  se  this "driver()" to generate Hessian:
 
       driver = SecondDerivatives{
-        MovedAtoms ={-1:1}
+         Atoms ={-1:1}
       }
    
  This will  make DFTB to generate "hesian.out"   
