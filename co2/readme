@@ -20,3 +20,8 @@ We get the following results:
  9  :      2397.1464  (cm-1)    # assymetric stretching (IR active)
 
 Compare also with results from IR-MD
+
+
+Additional reference:
+Note, that NIST database stores a  input & output  Gaussian files  with  vibrational  calculations for CO2 and other molecules at: 
+https://cccbdb.nist.gov/iofiles2.asp
