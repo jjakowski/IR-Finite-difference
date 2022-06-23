@@ -24,4 +24,7 @@ Compare also with results from IR-MD
 
 Additional reference:
 Note, that NIST database stores a  input & output  Gaussian files  with  vibrational  calculations for CO2 and other molecules at: 
-https://cccbdb.nist.gov/iofiles2.asp
+        https://cccbdb.nist.gov/iofiles2.asp
+
+And here is CO2 at B3LYP/6-31G*:
+        https://cccbdb.nist.gov/iofiles/co2/m8b1.out.txt
