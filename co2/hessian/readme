@@ -1,1 +1,31 @@
+Steps to calculate vibrational frequencies (and thermochemistry )  with DFTB
 
+1)  Optimization and Calulcation of hessian
+  Assuming that the structure is optimized  then  se  this "driver()" to generate Hessian:
+
+      driver = SecondDerivatives{
+        MovedAtoms ={-1:1}
+      }
+   
+ This will  make DFTB to generate "hesian.out"   
+
+2) Use the hessian printed by DFTB+ to generate vibrational frequencies with octave/matlab.  
+   The file  "hessian.out" has a formating with un-even number of columns per line. 
+   It needs to be reformatted before reading into octave: 
+
+    bash do-Hessian2vector                  # converts "hessian.out" in "hessian_vec"  with 1-number per line/row 
+    octave --no-gui-libs  octave-IR.inp  > octave-IR.out
+    
+    
+
+band.out   
+detailed.out  
+dftb.out  
+dftb_in.hsd  
+dftb_pin.hsd  
+do-Hessian2vector 
+geometry-optimized.gen  
+hessian.out  
+hessian_vec 
+octave-IR.inp  
+octave-IR.out  
