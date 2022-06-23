@@ -17,15 +17,17 @@ Steps to calculate vibrational frequencies (and thermochemistry )  with DFTB
     octave --no-gui-libs  octave-IR.inp  > octave-IR.out
     
     
-
-band.out   
-detailed.out  
-dftb.out  
-dftb_in.hsd  
-dftb_pin.hsd  
-do-Hessian2vector 
-geometry-optimized.gen  
-hessian.out  
-hessian_vec 
-octave-IR.inp  
-octave-IR.out  
+* DFTB files: *  
+    dftb_in.hsd                  # input file
+    geometry-optimized.gen       # input geometry
+    band.out   
+    detailed.out  
+    dftb.out   
+    dftb_pin.hsd  
+    hessian.out                  # output file with Hessian matrix
+    
+**bash  and octave files: ** 
+   do-Hessian2vector             # bash script for  converting "hessian.out"  ->  "hessian_vec"
+   hessian_vec 
+   octave-IR.inp                 # octave  script for calcultion if vibrational frequencies from "hessian_vec" for CO2
+   octave-IR.out  
