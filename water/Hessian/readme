@@ -1,0 +1,14 @@
+ Notes:
+----------
+1)  The dipole derivative needed for  IR intensities are calculated  with finite diference using Qchem's dipole moments. 
+    The quality of dipole of dipole  moments printed  in Qchem standard output file is too low for finite difference, 
+    therefore it is better to use  Qchem's scratch file "174.0"  which stores  full precision dipole moments. 
+
+2)  The units used  in standard qchem output  file and in "174.0" are  not the same.  
+     Standard qchem output uses  "Debye"  for dipole, whereas "174.0" uses a.u. (bohrr*electron).
+
+    Conversion:  Debye2au  = 0.39343
+
+3)  Dont forget to compile QChemRead.c:
+
+    g++  QChemRead.c -o QChemRead
